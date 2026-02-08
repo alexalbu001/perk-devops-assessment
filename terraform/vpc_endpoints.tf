@@ -1,6 +1,5 @@
 # VPC Endpoints for private subnet access to AWS services
-# This allows ECS tasks in private subnets to pull images from ECR
-# without needing a NAT Gateway
+# This allows ECS tasks to pull images from ECR through the AWS network
 
 # Security Group for VPC Endpoints
 resource "aws_security_group" "vpc_endpoints" {
