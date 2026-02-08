@@ -37,8 +37,6 @@ resource "aws_security_group" "ecs_tasks" {
     protocol        = "tcp"
     security_groups = [aws_security_group.alb.id]
   }
-
-  # Allow all outbound traffic (via NAT Gateway)
   egress {
     description = "Allow all outbound traffic"
     from_port   = 0
