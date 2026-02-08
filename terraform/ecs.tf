@@ -62,10 +62,9 @@ resource "aws_ecs_service" "main" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    # Use private subnets for ECS tasks (security best practice)
+    # Use private subnets for ECS tasks
     subnets = aws_subnet.private[*].id
 
-    # No public IP needed - tasks use VPC endpoints to reach ECR
     assign_public_ip = false
 
     security_groups = [
